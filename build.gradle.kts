@@ -4,7 +4,6 @@ val kluentVersion = "1.61"
 
 plugins {
     `maven-publish`
-    `java-library`
 
     kotlin("jvm") version "1.4.10"
 }
