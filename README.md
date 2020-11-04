@@ -3,7 +3,7 @@
 Dette biblioteket tilbyr en ktor-feature med en alternativ implementasjon av deres CORS modul.
 Denne tillater å sette subdomains til `*`. 
 
-Endringene fra ktors egen CORS modul påvirker kun hvorvidtappen selv svarer med feilkode 403 på et cors-kall.
+Endringene fra ktors egen CORS modul påvirker kun hvorvidt appen selv svarer med feilkode 403 på et cors-kall.
 
 Eksempel-config for å godta kall fra alle subdomener på `nav.no`:
 
