@@ -41,7 +41,7 @@ internal class CaseInsensitiveStringSet: MutableSet<String> {
 }
 
 private class CaseInsensitiveString(val value: String) {
-    val cachedHash = value.toLowerCase().hashCode()
+    val cachedHash = value.lowercase().hashCode()
 
     override fun equals(other: Any?): Boolean {
         return other is CaseInsensitiveString

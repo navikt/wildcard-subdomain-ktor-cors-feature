@@ -35,7 +35,7 @@ class NonStandardCORS(configuration: Configuration) {
 
     val methods: Set<HttpMethod> = HashSet<HttpMethod>(configuration.methods + Configuration.CorsDefaultMethods)
 
-    val allHeadersSet: Set<String> = allHeaders.map { it.toLowerCase() }.toSet()
+    val allHeadersSet: Set<String> = allHeaders.map { it.lowercase() }.toSet()
 
     private val allowNonSimpleContentTypes: Boolean = configuration.allowNonSimpleContentTypes
 
@@ -179,7 +179,7 @@ class NonStandardCORS(configuration: Configuration) {
     private fun ApplicationCall.corsCheckRequestHeaders(): Boolean {
         val requestHeaders =
             request.headers.getAll(HttpHeaders.AccessControlRequestHeaders)?.flatMap { it.split(",") }?.map {
-                it.trim().toLowerCase()
+                it.trim().lowercase()
             } ?: emptyList()
 
         return requestHeaders.none { it !in allHeadersSet }
