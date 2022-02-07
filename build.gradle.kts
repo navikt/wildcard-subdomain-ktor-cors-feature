@@ -1,16 +1,15 @@
-val ktorVersion = "1.4.1"
+val ktorVersion = "1.6.7"
 val jupiterVersion = "5.4.1"
-val kluentVersion = "1.61"
+val kluentVersion = "1.68"
 
 plugins {
     `maven-publish`
 
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version "1.6.10"
 }
 
 
 dependencies {
-    api(kotlin("stdlib-jdk8"))
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$jupiterVersion")
@@ -19,7 +18,6 @@ dependencies {
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -37,10 +35,10 @@ publishing {
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "13"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "13"
     }
 
     withType<Test> {
